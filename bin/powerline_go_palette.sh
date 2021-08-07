@@ -7,6 +7,9 @@
 
 # Usage powerline_go_palette.sh [theme_file_path] [theme_attribute_name]
 # e.g. ./powerline_go_palette.sh ~/.config/powerline-go/themes/custom.json GitNotStagedBg
+#
+# EDIT: I found out that the colors are xterm 8-bit colors.
+# You can find a cheat sheet here: https://jonasjacek.github.io/colors/
 
 theme_file=$1
 
