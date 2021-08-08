@@ -64,8 +64,6 @@ fi
 
 for i in {0..255}
 do
-  # TODO Check the behavior on OSX...might have to check uname and switch to gsed on Mac. So far
-  # this has only been tested on Linux
   if [ "$osx" = 1 ]; then
     gsed -ri 's,('"$attribute_name"')": [0-9]+,\1": '"$i"',' "$theme_file"
   else
