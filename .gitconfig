@@ -1,15 +1,30 @@
 [user]
-    name = Bjorn Stange
-    email = bjorn248@gmail.com
+	name = Bjorn Stange
+	email = bjorn248@gmail.com
 	signingkey = BF02F2946CE6FB83
 [core]
-    editor = /usr/bin/vim
+	editor = /usr/bin/nvim
 [alias]
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [commit]
-    gpgsign = true
+	gpgsign = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[pager]
+	diff = delta --hunk-header-style omit
+	log = delta --hunk-header-style omit
+	reflog = delta --hunk-header-style omit
+	show = delta --hunk-header-style omit
+
+[delta]
+	plus-style = "syntax #012800"
+	minus-style = "syntax #340001"
+	syntax-theme = Monokai Extended
+	navigate = true
+
+[interactive]
+	diffFilter = delta --color-only --hunk-header-style omit

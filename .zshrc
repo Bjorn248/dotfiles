@@ -74,6 +74,7 @@ PATH=$PATH:/usr/local/go/bin # Add system Go bin
 PATH=$PATH:~/go/bin # Add user Go bin
 PATH=/usr/local/opt/openssl/bin:$PATH # Add openssl bin
 
+
 function mkcd() {
   mkdir $1
   cd $1
@@ -117,3 +118,11 @@ function install_powerline_precmd() {
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
   install_powerline_precmd
 fi
+
+
+# goenv
+# export GOENV_ROOT="$HOME/.goenv"
+# export PATH="$GOENV_ROOT/bin:$PATH"
+# eval "$(goenv init -)"
+# export PATH="$GOROOT/bin:$PATH"
+# export PATH="$PATH:$GOPATH/bin"
