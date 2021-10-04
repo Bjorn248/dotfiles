@@ -49,6 +49,9 @@ Plug 'https://github.com/chase/vim-ansible-yaml.git', { 'for': 'yaml' }
 " Easy Align
 Plug 'junegunn/vim-easy-align'
 
+" Jsonnet
+Plug 'google/vim-jsonnet'
+
 " Only load this if running neovim
 " if has("nvim")
 "   " Deoplete
