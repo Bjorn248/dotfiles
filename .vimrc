@@ -52,6 +52,9 @@ Plug 'junegunn/vim-easy-align'
 " Jsonnet
 Plug 'google/vim-jsonnet'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " Only load this if running neovim
 " if has("nvim")
 "   " Deoplete
@@ -136,10 +139,16 @@ imap <F11> <nop>
 set pastetoggle=<F11>
 map <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>i
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
-nnoremap <Leader>g :s/\<<C-r><C-w>\>//g<Left><Left>
+nnoremap <leader>d :%s/[“”]/"/g<CR>
+nnoremap <leader>q :%s/[‘’]/'/g<CR>
 cmap w!! w !sudo tee % >/dev/null
 cmap dsp %s/\s\+$//g
+
+" open file with fzf
+nmap <leader>f :Files<CR>
+
+" search with ripgrep
+nmap <leader>s :Rg <C-r>"<CR>
 
 " window
 nmap <leader>sw<left>  :topleft  vnew<CR>
@@ -212,6 +221,8 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+map Y yy
 
 let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'test']
 
